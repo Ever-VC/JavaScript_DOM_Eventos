@@ -34,4 +34,27 @@ nuevoEnlace.classList.add('navegacion__enlace');
 const navegacion = document.querySelector('.navegacion');
 navegacion.appendChild(nuevoEnlace);
 
-console.log(nuevoEnlace);
+//console.log(nuevoEnlace);
+
+// Eventos
+console.log(1);
+
+window.addEventListener('load', imprimir); // Espera a que todo el HTML, CSS, imagenes y JS estén listos
+
+window.onload = function() { // Espera a que todo el HTML, CSS, imagenes y JS estén listos
+    console.log(3);
+}
+
+document.addEventListener('DOMContentLoaded', function() { // Espera a que el HTML esté listo, no espera CSS o imagenes
+    console.log(4);
+});
+
+console.log(5);
+
+function imprimir() {
+    console.log(2);
+}
+
+window.onscroll = function() {
+    console.log('scrolling...');
+}
