@@ -37,6 +37,7 @@ navegacion.appendChild(nuevoEnlace);
 //console.log(nuevoEnlace);
 
 // Eventos
+/*
 console.log(1);
 
 window.addEventListener('load', imprimir); // Espera a que todo el HTML, CSS, imagenes y JS estén listos
@@ -65,4 +66,29 @@ btnEnviar.addEventListener('click', function(evento) {
     console.log(evento);
     evento.preventDefault(); // Previene la acción por defecto
     console.log('Enviando formulario...');
-});
+});*/
+
+// Eventos de los inputs y textarea
+
+const datos = {
+    nombre: '',
+    email: '',
+    mensaje: ''
+}
+
+const nombre = document.querySelector('#nombre');
+const email = document.querySelector('#email');
+const mensaje = document.querySelector('#mensaje');
+
+nombre.addEventListener('input', leerTexto);
+email.addEventListener('input', leerTexto);
+mensaje.addEventListener('input', leerTexto);
+
+function leerTexto(evento) {
+    console.log(evento.target.value);
+
+    // Accede al id del elemento que está siendo modificado y le asigna el valor del input
+    datos[evento.target.id] = evento.target.value;
+
+    console.log(datos);
+}
