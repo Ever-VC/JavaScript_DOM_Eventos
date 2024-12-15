@@ -65,7 +65,7 @@ const btnEnviar = document.querySelector('.boton--primario');
 btnEnviar.addEventListener('click', function(evento) {
     console.log(evento);
     evento.preventDefault(); // Previene la acción por defecto
-    console.log('Enviando formulario...');
+    console.log('enviando formulario...');
 });*/
 
 // Eventos de los inputs y textarea
@@ -78,11 +78,18 @@ const datos = {
 
 const nombre = document.querySelector('#nombre');
 const email = document.querySelector('#email');
+const formulario = document.querySelector('.formulario');
 const mensaje = document.querySelector('#mensaje');
 
 nombre.addEventListener('input', leerTexto);
 email.addEventListener('input', leerTexto);
 mensaje.addEventListener('input', leerTexto);
+// El evento de submit
+formulario.addEventListener('submit', function(evento) {
+    evento.preventDefault();
+    console.log('Enviando formulario...');
+    console.log(evento);
+});
 
 function leerTexto(evento) {
     console.log(evento.target.value);
@@ -92,3 +99,4 @@ function leerTexto(evento) {
 
     console.log(datos);
 }
+
